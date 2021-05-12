@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Selectors</title>
+</head>
+<body>
+    <ul>
+        <li title="iki açıklama">Lorem ipsum dolor sit.</li>
+        <li>Libero quibusdam facilis non!</li>
+        <li class="kirmizi">Repellendus quae neque soluta?</li>
+        <li>Aspernatur sit exercitationem totam?</li>
+        <li id="oge5">Ratione voluptates quo tempora?</li>
+        <li>Sunt neque ea at.</li>
+        <li class="kirmizi">Cumque quaerat consequatur dolorem.</li>
+        <li>Quae accusamus sed commodi.</li>
+        <li title="Bir Açıklama">Fuga beatae ut aperiam?</li>
+        <li>Illo consectetur voluptas facere!</li>
+    </ul>
+    <p title="Bir Açıklama">
+        Lorem ipsum <span class="kirmizi">dolor</span>  sit amet.
+    </p>
+    <p>
+        <span style="display: none;">bir numaralı</span>
+        arama motoru : <a href="https://google.com">Google</a>
+    </p>
+
+    <div style="display: none;">
+        bu element gizlidir.
+    </div>
+
+    <button onclick="goster()">Tüm gizlileri göster</button>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        // her şeyi seç, birden fazla css özelliğini değiştirme
+        // $("*").css({
+        //     border: "3px solid black",
+        //     margin: "6px"
+        // });
+
+        // element seçimi : tüm li'leri seç sonlarına gülücük koy
+        $("li").append(" :)"); // append : sonuna ekleme yapar.
+
+        // class ile seçim
+        $(".kirmizi").css("color", "red");
+
+        // id ile seçim
+        $("#oge5").css("text-decoration", "underline");
+
+        // title attribute'unda Bir Açıklama olanları seç
+        $('[title="Bir Açıklama"]').css("background-color", "yellow");
+
+        // çoklu seçim: oge5 id'li ve kirmizi class'ların başına --> koy
+        $("#oge5, .kirmizi").prepend("-->");
+
+        // css hiyerarşi : p etiketilerinden kirmizi classlıların arka plan rengini gri yap
+        $("p > .kirmizi").css("background-color", "gray");
+
+        // siblings : li'nin oge5 id'liden sonraki kardeşleri
+        $("#oge5 ~ *").css("border-left", "10px solid red");
+
+        // content filter örnekleri
+        $("li:contains('dolor')").append("D");
+
+        // içinde link (a etiketi) içeren p etiketlerini seç
+        $("p:has(a)").append(" [Link]");
+
+        function goster()
+        {
+            // visiblity filter
+            $(":hidden").show(); // bütün gizli içerikleri gösterir açıklama satırları dahil
+        }
+    </script>
+</body>
+</html>

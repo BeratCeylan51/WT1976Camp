@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    
+    <!-- bu kod çalışmaz çünkü kodlar yukarıdan aşağı okunur merhaba ile değiştir komutu geldiğinde sayfada daha p etikerleri yok-->
+    <!-- <script>
+        $("p").html("Merhaba"); // p etiketlerinin(taglarının) içeriğini merhaba olarak değiştir
+    </script> bu kodun çalışması için-->
+
+    <script>
+        // döküman hazır olduğunda fonksiyon içindeki kodları çalıştır.
+        $(document).ready(function(){
+            $("p").html("merhaba");
+        });
+    </script>
+</head>
+<body>
+    <p>---</p>
+</body>
+</html>

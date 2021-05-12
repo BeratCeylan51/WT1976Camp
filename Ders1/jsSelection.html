@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem, ipsum dolor.</p>
+    <p id="onemli">Alias, totam deleniti.</p>
+    <p>Incidunt, aut necessitatibus.</p>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        var dizi = document.querySelectorAll("p"); // --> tüm paragraf taglarını getir. SelectorAll dizi döndürür
+
+        for (var i = 0; i < dizi.length; i++) { // dizi değişkeninin eleman sayısı kadar devam et
+            dizi[i].style.backgroundColor = "yellow"; // dizinin her bir elamının arkaplan rengini sarı yap
+        }
+
+        // jquery karşılığı
+        $("p").css("background-color", "cyan");
+
+        var parag = document.getElementById("onemli"); // js de id si onemli olan etiketleri seç
+        parag.style.fontWeight = "bold"; // parag değişkenin yazı stilini kalın yap
+
+        // jquery karşılığı
+        $("#onemli").css("font-weight", "bold"); // id si oenmli olan etiketin yazı stilini kalın yap
+    </script>
+</body>
+</html>
+<!-- 
+    p*3>Lorem3 : içeriği 3 kelimeden oluşan 3 tane paragraf tagı koy 
+ -->

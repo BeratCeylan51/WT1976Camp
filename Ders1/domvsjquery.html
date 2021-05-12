@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom vs jquery</title>
+</head>
+<body>
+    <p>Lorem, ipsum dolor.</p>
+    <p>Lorem, ipsum dolor.</p>
+    <p>Lorem, ipsum dolor.</p>
+    
+    <script src="jquery-3.6.0.min.js"></script> <!-- jquery dosyasını dahil ettik-->
+    <script>
+        // dom örneği
+        // yukarıdaki ilk p tagının dom nesnesine erişiyoruz. 
+        var parag = document.querySelector("p");
+        parag.style.color = "red"; // parag değişkenin içeriğinin rengini kırmızı yap
+
+        // jquery örneği
+        $(parag).css("color", "white"); // parag değişkenin içeriğinin rengini beyaz yap
+
+        var p1 = $("p"); // jquery object
+        $("p1").css("color", "magenta"); // sayfadaki tüm paragraf etiketlerinin rengini magenta yap
+
+        // jquery nesnesinden dom elementine erişme
+        var p2 = $("p")[0]; // p etiketlerinin 0. indexteki elemanı yani ilk p etiketi <-- saf dom elementi
+        p2.style.backgroundColor = ("black"); // seçilen p etiketinin arkaplan rengini saf js ile değiştirdik.
+
+        // js de bütün döküman document nesnesinde kayıtlı
+        document.body.style.backgroundColor = "yellow";
+    </script>
+</body>
+</html>
+<!-- 
+    p*3>Lorem3 : içeriği 3 kelimeden oluşan 3 tane paragraf tagı koy 
+ -->

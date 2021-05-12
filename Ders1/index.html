@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY Öğreniyorum</title>
+</head>
+<body>
+    <!-- id paragraf olan bir paragraf etiketi(tagı) ekledik -->
+    <p id="paragraf">
+        bu içeriği değiştireceğiz
+    </p>
+
+    Adet : <input type="text" id="adet">
+    <br>
+
+    <button id="ackapa">Metni Aç/Kapa</button>
+    <button id="btngoster">Aşağıdaki metni göster</button>
+    <!-- id si metin, stili du dosya çalıştığında bu içeriği gösterme -->
+    <p id="metin" style="display: none;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+    <!-- jquery dosyamızı ekledik, çağırdık -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        // id si paragraf olan selectory i seç.içindeki html Merhaba dünya olarak değiştir.arkaplan rengini sarı yap
+        $("#paragraf").html("Merhaba Dünya !").css("background-color", "yellow");
+
+        // id si adet olan elementin(lerin) değerini 3 yap
+        $("#adet").val(3);
+
+        // id si btngster olan etikete tıklandığında yazdığımız fonksiyonu çalıştır
+        $("#btngoster").click(function(){
+            $("#metin").show(); // id si metin olan etiketin içeriğini göster
+        });
+
+        // id si ackapa olan etikete tıklandığında yazdığımız fonksiyonu çalıştır
+        $("#ackapa").click(function(){
+            $("#metin").toggle(); // id si metin olan etikete tıklandığında içerik gözüküyorsa kapat kapalıysa aç.
+        })
+    </script>
+</body>
+</html>
+<!--
+    Lorem3 : 3 kelime verir.rakam değiştirilebilir.
+    textarea#bilgi : id si bilgi olan textarea etiketi oluşturur
+    script:src + tab : src paramtreli script oluşturur 
+    ! tab :  hazır html template getirir.
+    ctrl + ö : açıklama satır işareti oluşturur
+    ctrl + b : sol dosya pencersini kapatır 
+    alt + shift + f : kodları düzenler veya sağ tık format document
+    Live Server Eklentisi : bilgisayarımızda sanal bir sunucu açıyor ve çıktımızı gösteriyor. sağ tık > Open with Live Serv
+-->!

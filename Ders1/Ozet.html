@@ -1,0 +1,63 @@
+<!DOCTYPE html> <!-- <!DOCTYPE html> : Ben bu sayfada html 5 kullanıyorum demek-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Öğreniyorum</title>
+
+    <style>
+        p{
+            /* 
+                css kodlarını yazıyoruz
+                p etiketli içeriklerin yazı boyutunu ve yazı rengini değiştirdik 
+            */
+            font-size: 24px; color: green;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="color: red;">
+        <!-- Bu h1 etiketinin içerisine yazılan yazıların rengini değiştirdik -->
+        Merhaba Dünya
+    </h1>
+
+    <!-- p etiketinin içeriklerinin yazı boyutunu ve rengini head etiketi içinde style etiketleri arasında değiştirdik -->
+    <p>
+        Web programlama Öğreniyorum.
+    </p>
+
+    <button onclick="alert('Merhaba Dsc Gazi')">
+    <!-- 
+        Tıkla isimli butona tıklandığında ekran açılır pencerede istenilen mesajı yaz
+        alert js etiketidir.
+    -->
+        Tıkla
+    </button>
+    <button onclick="SariYap()"> 
+        <!-- bu butona tıklandığında kirmizi yap fonksiyonunu çalıştır -->
+        Arkaplanı Sarı yap
+    </button>
+    <script>
+        // js kodlarını bu etiket arasına yazıyoruz
+        // head arasında style etiketi gibi kullanabiliriz
+        function SariYap()
+        {
+            // document : html dökümanımız
+            // querySelector : etiketleri seçmek için kullanırız.
+            // sayfa da ilk gördüğü body etiketini alır
+            document.querySelector("body").style.backgroundColor = "yellow"; // jquery bu kodu daha kolay hale getirmemizi sağlıyor 
+        }
+    </script>
+
+</body>
+</html>
+
+<!--
+    ! tab :  hazır html template getirir.
+    ctrl + ö : açıklama satır işareti oluşturur
+    ctrl + b : sol dosya pencersini kapatır 
+    alt + shift + f : kodları düzenler veya sağ tık format document
+    Live Server Eklentisi : bilgisayarımızda sanal bir sunucu açıyor ve çıktımızı gösteriyor. sağ tık > Open with Live Server
+-->

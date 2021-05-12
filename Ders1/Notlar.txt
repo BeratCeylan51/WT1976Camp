@@ -1,0 +1,5 @@
+Live Server kolaylıklarından bir tanesi de dosyayı kaydettiğimiz de değişikliği görebiliriz sayfamızı yenilememize gerek yoktur.
+jquery de $ bir fonksiyondur.
+jquery ile yapılmış bir web sitesinde sayfada f12 tuşuna basarak ya da
+sağ tık > incele > console açılan yere jquery komutları yazılabilir.
+jquery ve js yi ortak kullanabiliriz
