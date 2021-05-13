@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes</title>
+    <style>
+        .onemli::after
+        {
+            content: "!";
+            color: red;
+            font-weight: bold;
+            font-size: 200%;
+        }
+
+        .aqua
+        {
+            background-color: aqua;
+        }
+
+        #cubuk
+        {
+            width: 100px;
+            height: 20px;
+            background-color: cyan;
+            margin-left: 68px;
+            margin-top: 10px;
+        }
+
+        #ball
+        {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            position: absolute;
+            top: 300px;
+            left: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+    <a href="#" id="link">Bir arama motoru</a> <br>
+
+    <input id="yor" type="checkbox"> Yoruldum <br>
+    <input type="checkbox"> Öğrendim <br>
+
+    <button class="aqua" onclick="degistir()">Bir buton</button><br>
+    Adet : <input type="number" id="adet"><br>
+    Genişlik : <input type="range" id="genislik" value="100"><br>
+    <div id="cubuk"></div>
+    <hr>
+    <!-- html 5 ile gelen bir özellik data- diyerek istediğimiz attribute tanımlayabiliyoruz. boolean değerse true false olarak alır -->
+    <p id="parag" data-aciklama="güzel söz">
+        Lorem ipsum dolor sit amet consectetur adipisicing.
+    </p>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        // attr : bir elementin herhangi bir attribute'unun değerini almak ve güncellemek için kullanılır
+        $("a").attr("href", "https://google.com"); // değer atadık
+
+        // prop : true-false
+        $("input#yor:checkbox").prop("checked", true); // işaretlenmiş olarak gelir
+
+        var id = $("a").attr("id"); // değerine eriştik
+        $("body").append("a'nın id'si " + id);
+
+        // id'si link olanların sınıflarına onemli'yi ekle
+        $("#link").addClass("onemli");
+
+        function degistir()
+        {
+            $("button").toggleClass("aqua"); // butona tıklandığında bir aqua rengi bir kendi rengi 
+        }
+
+        // form elemanlarının değerini değiştirme
+        $("#adet").val(5);
+
+        // genişlik değeri değiştikçe div etiketinin değeri de değişecek
+        $("#genislik").on("input", function()
+        {
+            var yeniDeger = $("#genislik").val();
+            $("#cubuk").width(yeniDeger).text(yeniDeger);
+        })
+
+        var aciklama = $("#parag").data("aciklama");
+        $("#parag").after("<h2>" + aciklama + "</h2>");
+
+        // topun içerisine sayfadaki konumunun pozisyonunu yazdır
+        var konum = $("#ball").offset();
+        $("#ball").html("top : " + konum.top + "<br>left : " + konum.left);
+    </script>
+</body>
+</html>
