@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Traversing</title>
+</head>
+<body>
+    <ul id="liste">
+        <li>Adem</li>
+        <li>Abdülhamit</li>
+        <li>Hatice</li>
+        <li>Ferhat</li>
+        <li>Ege</li>
+        <li>Tuba</li>
+        <li>Özge</li>
+        <li>Alperen</li>
+        <li>İbrahim</li>
+        <li>Zeynep</li>
+    </ul>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        // her bir liste üyesinin sonuna o öğenin karakter uzunluğunu koy
+        // saf js ile 
+        var ogeler = document.querySelectorAll("#liste > li"); // id si liste olan etiketlerin içindeki li leri seçmek için
+        console.log(ogeler); // ogeler değişkenindekileri console yazdırmak için // console ekranı chrome ekranında f12 ile açılan bölme
+
+        // for ile 
+        // for (var i = 0; i < ogeler.length; i++)
+        // {
+        //     var metin = ogeler[i].innerText; // ogeler içindeki her elemanı gezmek için
+        //     ogeler[i].innerText += " : " + metin.length; // elemanların karşısına karakter sayısını yazdırmak için
+        // }
+
+        // forEach metodu ile. forEach dizilere uygulanan bir method
+        // ogeler.forEach(function(element, key) // element : ogeler içindeki elemanlar. // key : elemanların index numarası
+        // {
+        //     //console.log(key + " " + element.innerText); // console ekranında kontrol etmek için
+        //     var metin = element.innerText; // ogeler içindeki herbir elemanı gezerek metin değişkenine atıyoruz
+        //     element.innerText += " : " + metin.length; // ogeler içindeki elemanların karşısına karakter sayılasını yazdırmak için
+        // });
+
+        // jquery ile 
+        $("#liste > li").each(function(index, element) // seçim kümesindeki("#liste > li") her bir element için oluşturduğumuz fonksiyon ayrı ayrı çağrılır
+        {
+            // console.log(this.innerText); // saf js ile elemanları console yazdırdık // this burada li içersindekileri elemanları tutuyor
+            // console.log($(this).text()); // jquery ile 
+
+            var metin = $(this).text(); // id si liste olan etiketlerin içerisindeki li lerin elemanlarını metin değişkenine atadık
+            $(this).append(" : " + metin.length); // elemanların sonuna uzunluklarını ekledik
+        });
+
+        var dizi = ["Emek", "Caner", "Fuat", "Ferhat", "İlker"];
+
+        // // saf js ile bu dizinin elemanlarını bir liste oluşturup içersine ekle ve sonra bu listeyi yukarıdaki listenin önüne ekle
+        // let ul = document.createElement("ul"); // createElement : istenilen etiketi oluşturur
+
+        // for (const ad of dizi) // const : sabitlik belirtir
+        // {
+        //     let li = document.createElement("li"); // let veri tipidir daha çok tercih edilir
+        //     li.innerText = ad; // ad'a atadığımız dizi içerisindeki elemanları li etiketi içerisine yaz
+        //     ul.appendChild(li); // li etiketlerini ul etiketi içerisine ekle
+        // }
+
+        // let oncekiUl = document.getElementById("liste"); // id'si liste olan etikeri seçtik oncekiUl değişkenine atadık
+        // oncekiUl.parentNode.insertBefore(ul, oncekiUl);
+
+        // jquery ile bu dizinin elemanlarını bir liste oluşturup içersine ekle ve sonra bu listeyi yukarıdaki listenin önüne ekle
+        let yeniUl = $("<ul/>"); // ul etiketi oluşturduk
+        $.each(dizi, function(index, ad) // dizi değişkenindeki elemanları jquery foreach'i ile tek tek gezer ve ad parametresine atar
+        {
+            $("<li/>").text(ad).appendTo(yeniUl); // her ad için o adı içeren bir li oluşturduk ul'a(yeniUl değişkenine) ekledik
+        });
+        yeniUl.insertBefore("#liste"); // id'si liste olan etiketten önce yeniUl değişkenini ekle
+
+    </script>
+</body>
+</html>
