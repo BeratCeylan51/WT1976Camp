@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traversing - closest</title>
+    <title>jQuery - Traversing - closest</title>
+    <style>
+        form
+        {
+            border: 3px solid blue;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-    
+    <form>
+        <button type="button">Buton 1</button>
+    </form>
+
+    <form>
+        <div>
+            Lorem ipsum dolor sit amet.
+            <button type="button">Buton 2</button>
+        </div>
+    </form>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        // bit butona tıklandığında onu içeren ilk form'un başına butonun içeriğinde olan metni ekle
+        $("button").click(function()
+        {
+            var metin = $(this).text(); // this kelimesi o anki atanan event'i temsil eder ilk butona tıklandığında this ilk butondur 2. butona tıklandığında this 2. butondur..
+            var enYakinindakiForm = $(this).closest("form");
+            enYakinindakiForm.prepend(metin);
+        });
+    </script>
 </body>
 </html>
