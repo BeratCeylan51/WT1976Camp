@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h2>Tıklandığında Kaybolan Butonlar</h2>
+    <div id="gorev1">
+        <button>Buton 1</button>
+        <button>Buton 2</button> 
+        <button>Buton 3</button> 
+        <button>Buton 4</button>
+    </div>
+    
+
+    <h2>Çift Tıklandığında Kızaran Kelimeler</h2>
+    <p id="tesekkur">
+        <span>Gazi</span>
+        <span>DSC</span>
+        <span>topluluğuna</span>
+        <span>teşekkür</span>
+        <span>ederiz.</span>
+    </p>
+    <hr>
+
+    <h2>Şehirler</h2>
+    <form id="frmSehir">
+        <label for="ad"></label>
+        <input type="text" id="ad" required />
+        <button type="submit">Ekle</button>
+    </form>
+    <ul id="sehirler"></ul>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        // tıklandığında kaybolan butonlar
+       $("#gorev1 > button").click(function()
+       {
+           this.remove(); //dom elementine dom fonksiyonu uyguladik
+       });
+
+       // Çift tıklandığında kızaran kelimeler
+       $("#tesekkur > span").click(function()
+       {
+           $(this).css("color", "red");
+       });   
+
+       // labele girieln değerleri liste olarak ekleme ve çift tıklandığında listeye eklenenleri silme
+       $("#frmSehir").submit(function(event)
+       {
+           event.preventDefault(); // teslim etme özelliğini devre dışı bıraktık
+           var sehirAd = $("#ad").val(); // id'si ad olanın değerini al sehirAd değişkenine ata
+           // Soru : Alttaki satırda html metodu yerine text kullanırsak ne olur?
+           var li = $("<li/>").html(sehirAd).dblclick(function() // li elementi oluştur içerisine sehirAd değişkenindeki değeri yaz. li değişkenine ata ve buna çift tıklandığında belirtilen fonksiyonu çalıştır
+           {
+               this.remove(); // sil
+           }); 
+           $("#sehirler").append(li);
+           this.reset();
+       });
+
+       // Cevap : şehir adı olarak <strong>Niğde</strong> girin ve farkına bakın
+    </script>
+</body>
+</html>

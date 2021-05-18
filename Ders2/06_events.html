@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h2>Tıklandığında Kaybolan Butonlar</h2>
+    <button onclick="this.remove()">Buton 1</button> <!-- this bulunduğu bölümü temsil eder yani buton 1 deki this buton1 için çalışır. -->
+    <button onclick="this.remove()">Buton 2</button> <!-- Buton 2 deki this buton 2 için çalışır -->
+    <button onclick="this.remove()">Buton 3</button> <!-- Buton 3 deki this buton 3 için çalışır -->
+    <button onclick="this.remove()">Buton 4</button> <!-- Buton 4 deki this buton 4 için çalışır -->
+
+    <h2>Çift Tıklandığında Kızaran Kelimeler</h2>
+    <p id="tesekkur">
+        <span>Gazi</span>
+        <span>DSC</span>
+        <span>topluluğuna</span>
+        <span>teşekkür</span>
+        <span>ederiz.</span>
+    </p>
+    <hr>
+
+    <h2>Şehirler</h2>
+    <form id="frmSehir">
+        <label for="ad"></label>
+        <input type="text" id="ad" required />
+        <button type="submit">Ekle</button>
+    </form>
+    <ul id="sehirler"></ul>
+
+    <script>
+        var frmSehir = document.getElementById("frmSehir"); // id si frmSehir olan etiketi al frmSehir değişkenine ata
+        var inputAd = document.getElementById("ad"); // id'si ad olan etiketi al inputAd değişkenine ata 
+        var ulSehirler = document.getElementById("sehirler"); // id'si sehirler olan etiketi ulSehirler değişkenine ata
+        frmSehir.addEventListener("submit", function(event)
+        {
+            event.preventDefault(); // Butona bastığımızda gönderme işlemi yapmamak için // formun varsayılan davranışını devre dışı bırak (teslim etme özelliği)
+            var sehirAd = inputAd.value; // inputAd değişkeninedeki etiketin değerini al sehirAd değişkenine ata
+            var li = document.createElement("li"); // li etiketi oluştur
+            li.ondblclick = function() // li elementine çift tıklandığında fonksiyonu çalıştır
+            {
+                this.remove(); // sil
+            }
+            li.innerHTML = sehirAd; // oluşturulan li etiketlerine sehirAd değişkenindeki değerleri aktarıyoruz
+            ulSehirler.appendChild(li); // ulSehirler değişkenine li'yi çocuk olarak ekle
+            this.reset(); // label içerisini temizlemek için
+        });
+        var spanlar = document.querySelectorAll("p#tesekkur > span");
+        for (var span of spanlar)
+        {
+            span.ondblclick = function() // çift tıklandığında fonksiyon çalıştır
+            {
+                this.style.color = "red"; // yazı rengini kırmızı yap
+                // this.remove(); // çift tıklandığında yazıları kaldırmak için
+            };
+        }
+    </script>
+</body>
+</html>
