@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Traversing</title>
+</head>
+<body>
+    <ul>
+        <li class="haric">Özgür</li>
+        <li>Ceren</li>
+        <li class="haric">Enes</li>
+        <li>Emek</li>
+        <li>Doğukan</li>
+        <li>Fuat</li>
+        <li>Kedi</li>
+        <li class="haric">Okan</li>
+        <li class="haric">Samet</li>
+        <li class="haric">Rümeysa</li>
+    </ul>
+    <textarea id="ozet" cols="40" rows="10"></textarea>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        let liler = $("li"); // liler değişkenine li etiketlerini atadık
+
+        // li'lerin ilk elemanını textarea içerisinde yazdır
+        yazdir("İlk Kişi : " + liler.first().text());
+        
+        // li'lerin sonuncusunun elemanını textarea içerisinde yazdır
+        yazdir("Son Kişi : " + liler.last().text());
+        
+        // li'lerin beşinci elemanını textarea içerisinde yazdır
+        yazdir("5. Kişi : " + liler.eq(4).text()); // index 0 dan başladığı için 5. kişi 4. indexteki 5. kişidir
+
+        // 6. indexten sonraki isimleri textarea içerisine aralarına virgül koyarak yazdır
+        var adlar = liler.eq(6).nextAll().map(function() // liler içerisindeki lilerden 6. indexten sonrakileri al diziye çevir
+        {
+            return this.innerText; // dizi elemanlarını döndür
+        }).get().join(", "); // dizi elemanlarını düz bir listeye çevir ve aralarına virgül koyarak tek bir string üret
+        yazdir("7. Sonrası : " + adlar); 
+
+        // ilk bulduğu Fuat isminden sonrakini textarea içerisine yazdır
+        var sonraki = liler.filter(function(index, li) // liler içindekileri fonksiyona göre filtrele
+        {
+            return li.innerText == "Fuat"; // li etiketinin elemanı fuat ise true dön
+        }).first().next().text(); // true döndüğün ilk değerin sonraki elemanını yazdır
+        yazdir("Fuat sonrası : " + sonraki);
+
+        // liste öğelerinin sonuncusunun kardeşlerini italic yap
+        liler.last().siblings().css("font-style", "italic");
+
+        // liste öğelerinin 5. sinin sonrasını bold yap
+        liler.eq(4).nextAll().css("font-weight", "bold");
+
+        // liste öğelerinden haric sınıfına sahip OLMAYANLARI textarea içerisne yazdır.
+        var dahiller = liler.not(".haric").get().map(x => x.innerText).join(", ");
+        yazdir("haric sınıfsızlar : " + dahiller);
+
+        function yazdir(metin)
+        {
+            let icerik = $("#ozet").val(); // id'si ozet olan etiketin değerini icerik değişkenine ata
+            $("#ozet").val(icerik + metin + "\n"); // id'si ozet olan etiketin değerine metin parametresini ekle
+        }
+    </script>
+</body>
+</html>
