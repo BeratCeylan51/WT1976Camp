@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efektler</title>
+    <style>
+        #pano /* id'si pano olan bir değer tanımladık ve stil belirledik */
+        {
+            background: url("resim.jpg");
+            width: 400px;
+            height: 400px;
+            position: relative; /* ilk for için kullanıldı */ 
+        }
+        #pano > div /* id'si pano olanların div elemanlarına stil tanımladık */
+        {
+            box-sizing: border-box;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 2rem;
+            position: absolute; /* ilk for için kullanıldı */                      
+            /*float: left;*/ /* açıklama satırına alınmış for için kullanıldı */
+        }
+
+        /* .dolgu 
+        {
+            background-color: white;
+            border: 1px solid black;
+        } */ /* açıklama satırına alınmış for için kullanıldı */
+
+    </style>
+</head>
+<body>
+    <div id="pano"></div> <!-- pano id'si ni div elementimize ekledik-->
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+
+        for (var i = 0; i < 100; i++)
+        {
+            var x = i % 10 * 40; // i nin mod 10 unu al 40 ile çarp x değişkenine ata
+            var y = Math.floor(i / 10) * 40; // i yi 10 a böl onluğa yuvarla 40 ile çarp y değişkenine ata
+
+            var div = $("<div/>").offset({ left: x, top: y}).text("?"); // div elementi oluştur. sol pozisyonuna x değişkenini, üst pozisyonuna y değişkenini ver. divlerin içerisine ? metnini ekle
+            $("#pano").append(div); // id'si pano olan elemente div değişkenini ekle
+        }
+
+        $("#pano > div").mouseover(function() // id'si pano olan elementlerin içerisindeki divlerin üzerine mouse ile gelindiğinde belirtilen fonksiyonu çalıştır
+        {
+            $(this).fadeOut(1000); // 1 saniye de solarak kaybol
+            //$(this).hide(1000); // 1 saniyede küçülerek kaybol
+        })
+
+
+        // for (var i = 0; i < 100; i++)
+        // {
+        //     var div = $("<div/>").addClass("dolgu"); // div elementi oluştur. oluşturulan div elemantlerine dolgu sınıfını ekle bunları div değişkenine ata
+        //     $("#pano").append(div); // id'si pano olan elemente div değişkenini ekle
+        // }
+
+        // $("#pano > div").mouseover(function() // id'si pano olan elementlerin içerisindeki divlerin üzerine mouse ile gelindiğinde belirtilen fonksiyonu çalıştır
+        // {
+        //     $(this).removeClass("dolgu"); // tıklanan div elementinin dolgu classını sil
+        // })
+    </script>
+</body>
+</html>
