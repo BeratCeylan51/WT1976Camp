@@ -1,0 +1,7 @@
+bootstap 4 jQuery ile birlikte çalışır. jQuerysiz çalışmaz.
+bootstap 5 jQuerysiz çalışabilir.
+bootstap.bundle.min.js yi eklersek popper.js kütüphanesini de dahil etmiş oluruz.
+bootstap.bundle.min.js = bootstap.js + popper.js
+popper.js : fare ile üzerine geldiğimizde bir açıklmaa kutucuğu açılır.
+bootstap4 de sayfaya önce jQuery i dahil etmemiz gerekiyor yoksa çalışmaz.
+container : sayfada yazının daha düzenli görülmesini sağlar. sağdan ve soldan boşluk ayarlar.
