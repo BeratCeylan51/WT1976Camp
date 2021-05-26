@@ -2,28 +2,40 @@
 <html lang="en">
 <head>
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <!-- Web sitesini yazmak için kullanılan karakter setini belirtir. -->
     <meta charset="UTF-8">
+
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+   
     <!-- Sayfayı işleyecek Internet Explorer sürümünü belirler. Edge modunu kullanılarak mevcut en yüksek modu kullanması için ayarlanmıştır. -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+   
     <!-- Sayfanın viewport boyutuyla 1:1 orantıya sahip olmasından emin olur. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
+
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+    
     <!-- google fonts dan istediğimiz yazı stillerini seçtik ve bu şekilde ekledik. css ile de body etiketine uyguladık -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <!-- Bu ise Bootstrap’in çekirdek CSS’inin eklendiği kısımdır. -->
     <link rel="stylesheet" href="libs/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <link rel="stylesheet" href="css/site.css"> <!-- dosyayı oluşturmadan burada yazarsak tıkladığımızda vs code bize sorarak oluşturur-->
 </head>
 <body>
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <!-- Sayfamızın başlığı header kısmında yer alacak -->
     <header>
         <!-- içeriklerimizi koyacağımız bir div oluşturduk. ortalaması için class ı container verdik. dikey paddingini 5 miktarlık olarak ayarladık  -->
@@ -40,22 +52,65 @@
             </p>
         </div>
     </header>
+
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <!-- sayfamızın ana içeriği main kısmımızda yer alacak -->
     <main>
         <!-- içeriklerimizi koyacağımız bir div oluşturduk. ortalaması için class ı container verdik  -->
         <div class="container">
             <!-- row ile tek satırlık bir div oluşturduk -->
             <div class="row">
+
+                <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
                 <div class="col-lg-8"> <!-- ilk sütun large cihazlarda 12 lik sistemde 8 lik kısım-->
                     sol sütun
                 </div>
+
+                <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
                 <div class="col-lg-4"> <!-- 2. sütun large cihazlarda 12 lik sistemde 4 lük kısım-->
-                    sağ sütun
+                    
+                    <!--  -------------- SAĞ SÜTUN İLK KART BAŞLANGIÇ ----------------- -->
+
+                    <!-- kart gibi düşünülebilir. kenarlık 0, ovallik yani yuvarlaklık 0, gölgelendir -->
+                    <div class="card border-0 rounded-0 shadow">
+                        <img src="img/photo3.jpg" alt="about me" class="w-100"> <!-- kartın içindeki resmin boyutu %100 olsun -->
+                        
+                        <div class="card-body">
+
+                            <!-- My Name i kart başlığı yazı tipini kalın olarak belirledik -->
+                            <h5 class="card-title font-weight-bold">My Name</h5>
+                            <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+
+                        </div>
+                    </div>
+                    <!-- -------------- SAĞ SÜTUN İLK KART BİTİŞ -------------------- -->
+
+                    <!-- SAĞ SÜTUN İKİNCİ KART BAŞLANGIÇ  -->
+
+                     <!-- kart gibi düşünülebilir. kenarlık 0, ovallik yani yuvarlaklık 0, gölgelendir -->
+                    <div class="card border-0 rounded-0 shadow mt-4">
+                        <div class="card-header">
+                            Populer Posts
+                        </div>
+
+                        <div class="list-group">
+                            <a href="a" class="list-group-item list-group-item-action">
+                                
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
             </div>
         </div>
     </main>
+
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- sayfamızın alt bilgileri bu kısımda yer alacak -->
