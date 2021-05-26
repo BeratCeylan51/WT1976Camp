@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Web sitesini yazmak için kullanılan karakter setini belirtir. -->
+    <meta charset="UTF-8">
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Sayfayı işleyecek Internet Explorer sürümünü belirler. Edge modunu kullanılarak mevcut en yüksek modu kullanması için ayarlanmıştır. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Sayfanın viewport boyutuyla 1:1 orantıya sahip olmasından emin olur. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- google fonts dan istediğimiz yazı stillerini seçtik ve bu şekilde ekledik. css ile de body etiketine uyguladık -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Bu ise Bootstrap’in çekirdek CSS’inin eklendiği kısımdır. -->
+    <link rel="stylesheet" href="libs/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <link rel="stylesheet" href="css/site.css"> <!-- dosyayı oluşturmadan burada yazarsak tıkladığımızda vs code bize sorarak oluşturur-->
+</head>
+<body>
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Sayfamızın başlığı header kısmında yer alacak -->
+    <header>
+        <!-- içeriklerimizi koyacağımız bir div oluşturduk. ortalaması için class ı container verdik. dikey paddingini 5 miktarlık olarak ayarladık  -->
+        <div class="container py-5">
+            <!-- MY BLOG yazısını text-center ile ortaladık, h1 başlığını verdik, yazıyı daha kalın yaptık -->
+            <div class="text-center h1 font-weight-bolder">
+                MY BLOG
+            </div>
+            <!-- yazıyı text-center ile ortaladık -->
+            <p class="text-center">
+                Welcome to the blog of 
+                <!-- unkown yazısının arka planı karanlık , yazı rengini beyaz 2 miktarlık padding olarak ayarladık -->
+                <span class="bg-dark text-white px-2"> unkown </span>  
+            </p>
+        </div>
+    </header>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- sayfamızın ana içeriği main kısmımızda yer alacak -->
+    <main>
+        <!-- içeriklerimizi koyacağımız bir div oluşturduk. ortalaması için class ı container verdik  -->
+        <div class="container">
+            <!-- row ile tek satırlık bir div oluşturduk -->
+            <div class="row">
+                <div class="col-lg-8"> <!-- ilk sütun large cihazlarda 12 lik sistemde 8 lik kısım-->
+                    sol sütun
+                </div>
+                <div class="col-lg-4"> <!-- 2. sütun large cihazlarda 12 lik sistemde 4 lük kısım-->
+                    sağ sütun
+                </div>
+            </div>
+        </div>
+    </main>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- sayfamızın alt bilgileri bu kısımda yer alacak -->
+    <footer></footer>
+
+    <!-- jQuery kütüphanesini dahil ettik -->
+    <script src="libs/jQuery/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap’in çekirdek JavaScript’ini ekler. Bu söz diziminin düzgün çalışması için daima jQuery söz diziminin altında konumlandırılması gerekir. -->
+    <script src="libs/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script> <!-- bundle.min.js içerisinde poper kütüphaneside vardır.-->
+</body>
+</html>
