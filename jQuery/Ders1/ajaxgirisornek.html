@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +7,18 @@
     <title>Ajax ilk örnek</title>
 </head>
 <body>
+    <!-- id'si bilgi sütun genişliği 30 satır genişliği 10 olan bir textare -->
     <textarea id="bilgi" cols="30" rows="10"></textarea>
 
-    <script src="jquery-3.6.0.min.js"></script>
+    <!-- sayfaya jQuery dahil etme -->
+    <script src="jquery-3.6.0.min.js"></script> 
 
     <script>
         $.ajax({
-            url: "Notlar.txt",
-            type: "get",
-            success: function(cevap){
-                $("#bilgi").val(cevap);
+            url: "Notlar.txt", // gösterilecek bölümün url'si
+            type: "get", 
+            success: function(cevap){ // başarılı olduğunda fonksiyonu çalıştır.
+                $("#bilgi").val(cevap); //bilgi id'li etiketin değerine cevap parametresini ata.
             }
         })
     </script>
