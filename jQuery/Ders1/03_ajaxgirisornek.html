@@ -7,7 +7,7 @@
     <title>Ajax ilk örnek</title>
 </head>
 <body>
-    <!-- id'si bilgi sütun genişliği 30 satır genişliği 10 olan bir textare -->
+    <!-- id'si bilgi sütun genişliği 30, satır genişliği 10 olan bir textarea -->
     <textarea id="bilgi" cols="30" rows="10"></textarea>
 
     <!-- sayfaya jQuery dahil etme -->
@@ -15,7 +15,7 @@
 
     <script>
         $.ajax({
-            url: "Notlar.txt", // gösterilecek bölümün url'si
+            url: "03_1_Notlar.txt", // gösterilecek bölümün url'si
             type: "get", 
             success: function(cevap){ // başarılı olduğunda fonksiyonu çalıştır.
                 $("#bilgi").val(cevap); //bilgi id'li etiketin değerine cevap parametresini ata.

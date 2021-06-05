@@ -13,7 +13,7 @@
     
     <script src="jquery-3.6.0.min.js"></script> <!-- jquery dosyasını dahil ettik-->
     <script>
-        // dom örneği
+        // dom örneği --> Document Object Model
         // yukarıdaki ilk p tagının dom nesnesine erişiyoruz. 
         var parag = document.querySelector("p");
         parag.style.color = "red"; // parag değişkenin içeriğinin rengini kırmızı yap
@@ -22,7 +22,7 @@
         $(parag).css("color", "white"); // parag değişkenin içeriğinin rengini beyaz yap
 
         var p1 = $("p"); // jquery object
-        $("p1").css("color", "magenta"); // sayfadaki tüm paragraf etiketlerinin rengini magenta yap
+        $(p1).css("color", "magenta"); // sayfadaki tüm paragraf etiketlerinin rengini magenta yap
 
         // jquery nesnesinden dom elementine erişme
         var p2 = $("p")[0]; // p etiketlerinin 0. indexteki elemanı yani ilk p etiketi <-- saf dom elementi
