@@ -5,3 +5,8 @@ bootstap.bundle.min.js = bootstap.js + popper.js
 popper.js : fare ile üzerine geldiğimizde bir açıklmaa kutucuğu açılır.
 bootstap4 de sayfaya önce jQuery i dahil etmemiz gerekiyor yoksa çalışmaz.
 container : sayfada yazının daha düzenli görülmesini sağlar. sağdan ve soldan boşluk ayarlar.
+
+1rem : html elmentine verilmiş font-size yani 16px dir.
+
+bootstap kullanırken class isimlerinin otomatik tamamlanmasını aktif hale getirmek için 
+HTML CSS Support eklentisini kullandık
