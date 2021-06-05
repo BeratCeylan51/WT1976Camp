@@ -7,48 +7,41 @@
     <title>Html Öğreniyorum</title>
 
     <style>
-        p{
-            /* 
-                css kodlarını yazıyoruz
-                p etiketli içeriklerin yazı boyutunu ve yazı rengini değiştirdik 
-            */
-            font-size: 24px; 
-            color: green;
+        /* CSS kodları style etiketi arasına yazılır */
+
+        p /* paragraf etiketleri */
+        {
+            font-size: 24px; /* yazı boyutu 24 px */
+            color: green; /* yazı rengi yeşil */
         }
     </style>
 
 </head>
 <body>
 
-    <h1 style="color: red;"> <!-- Bu h1 etiketinin içerisine yazılan yazıların rengini değiştirdik -->
+    <h1 style="color: red;"> <!-- h1 etiketinin yazı rengini style kırmızı-->
         Merhaba Dünya
     </h1>
-
-    <!-- p etiketinin içeriklerinin yazı boyutunu ve rengini baş(head) bölümde bulunan style etiketleri arasında değiştirdik -->
     <p>
-        Web programlama Öğreniyorum.
+        Web Programlam Öğreniyorum
     </p>
 
-    <button onclick="alert('Merhaba Dsc Gazi')">
-    <!-- 
-        Tıkla isimli butona tıklandığında ekran açılır pencerede istenilen mesajı yaz
-        alert js etiketidir.
-    -->
-        Tıkla
-    </button>
-    <button onclick="SariYap()"> 
-        <!-- bu butona tıklandığında kirmizi yap fonksiyonunu çalıştır -->
-        Arkaplanı Sarı yap
-    </button>
+    <!-- Tıkla butonuna tıklandığında alert fonksiyonun içindeki mesajı yaz -->
+    <button onclick="alert('Merhaba Dsc Gazi')">Tıkla</button>
+
+    <!-- Arkaplanı sarı yap butonuna tıklandığında SariYap fonksiyonunu çalıştır -->
+    <button onclick="SariYap()">Arkaplanı Sarı Yap</button>
+
     <script>
-        // js kodlarını bu etiket arasına yazıyoruz
-        // head arasında style etiketi gibi kullanabiliriz
+        // javascript kodları script etiketi arasına yazılır.
+        // baş bölümdede (head etiketi arası) tanımlanabilir.
+
         function SariYap()
         {
-            // document : html dökümanımız
-            // querySelector : etiketleri seçmek için kullanırız.
-            // sayfa da ilk gördüğü body etiketini alır
-            document.querySelector("body").style.backgroundColor = "yellow"; // jquery bu kodu daha kolay hale getirmemizi sağlıyor 
+            // html dökümanındaki ilk body sorgusunu seçer. arkaplan sitilini sarı yapar.
+            document.querySelector("body").style.backgroundColor = "yellow"; // jQuery, kodları daha kolay hale getirmemizi sağlar
+            // document      : html dökümanımız
+            // querySelector : sorgu seçmek için kullanılır.
         }
     </script>
 
