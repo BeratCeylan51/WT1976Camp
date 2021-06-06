@@ -29,7 +29,7 @@ $("#gorev4").click(function () // id'si gorev4 olan etikete tıklandığında fo
   {
     var metin = $(this).text(); // p etiketlerinin içerisindeki metinleri metin değişkenine atadık
     $(this) // o anki p etiketi
-      .siblings("h2") // p etiketi ile aynı grupta bulunan h2 etiketini seç
+      .siblings("h2") // p etiketi ile aynı grupta bulunan h2 etiketini seç yani kardeş etiketini
       .append(" (" + metin.length + " karakter)"); // sonuna karakter sayısını ekle
   });
 });
