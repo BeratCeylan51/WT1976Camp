@@ -39,3 +39,10 @@ $("#gorev5").click(function ()
 {
     $("h1").css("color", "red");
 });
+
+// görev 9
+$(":header").mouseover(function() // başlıkların üzerine fare ile geldiğinde belirtilen fonksiyonu çalıştır
+{
+    var metin = $(this).text(); // o anki başlığın metnini metin değişkenine atadım
+    $("#gorev9 > input:text").val(metin); // id'si gorev9 olan etiketin tipi text olan inputunun değerinii metin değişkeni yap
+})

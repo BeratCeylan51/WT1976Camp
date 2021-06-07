@@ -27,11 +27,11 @@
 
     <script src="jquery-3.6.0.min.js"></script>
     <script>
-        // bit butona tıklandığında onu içeren ilk form'un başına butonun içeriğinde olan metni ekle
+        // bir butona tıklandığında onu içeren ilk form'un başına butonun içeriğinde olan metni ekle
         $("button").click(function()
         {
             var metin = $(this).text(); // this kelimesi o anki atanan event'i temsil eder ilk butona tıklandığında this ilk butondur 2. butona tıklandığında this 2. butondur..
-            var enYakinindakiForm = $(this).closest("form");
+            var enYakinindakiForm = $(this).closest("form"); // o anki butonun en yakın form elemanını seçer enYakindakiForm değişkenine aktarır
             enYakinindakiForm.prepend(metin);
         });
     </script>
