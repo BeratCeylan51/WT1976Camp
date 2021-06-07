@@ -35,6 +35,7 @@
         var frmSehir = document.getElementById("frmSehir"); // id si frmSehir olan etiketi al frmSehir değişkenine ata
         var inputAd = document.getElementById("ad"); // id'si ad olan etiketi al inputAd değişkenine ata 
         var ulSehirler = document.getElementById("sehirler"); // id'si sehirler olan etiketi ulSehirler değişkenine ata
+
         frmSehir.addEventListener("submit", function(event)
         {
             event.preventDefault(); // Butona bastığımızda gönderme işlemi yapmamak için // formun varsayılan davranışını devre dışı bırak (teslim etme özelliği)
@@ -48,7 +49,9 @@
             ulSehirler.appendChild(li); // ulSehirler değişkenine li'yi çocuk olarak ekle
             this.reset(); // label içerisini temizlemek için
         });
+
         var spanlar = document.querySelectorAll("p#tesekkur > span");
+        
         for (var span of spanlar)
         {
             span.ondblclick = function() // çift tıklandığında fonksiyon çalıştır

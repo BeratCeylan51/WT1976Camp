@@ -11,7 +11,7 @@ $("#gorev1").click(function () // id'si gorev1 olan etikete tıklandığında be
 // görev 2
 $("#gorev2").click(function() // id'si gorev2 olan etikete tıklandığında belirtilen fonksiyonu çalıştır
 {
-    var sayi = $("h2").length; // h2 etiketlerinin eleman sayısını sayi değişkenine ata
+    var sayi = $("article > div > h2").length; // h2 etiketlerinin eleman sayısını sayi değişkenine ata
     $("#gorev2 > input:text").val(sayi); // id'si gorev2 olan etiketin tipi text olanların değerine sayi değişkenini ver
 });
 
@@ -35,9 +35,17 @@ $("#gorev4").click(function () // id'si gorev4 olan etikete tıklandığında fo
 });
 
 // görev 5
-$("#gorev5").click(function ()
+$("#gorev5").click(function () // id'si gorev5 olan etikete tıklandığında fonksiyonu çalıştır
 {
-    $("h1").css("color", "red");
+    $("article > div > h2:odd").css("color", "blue"); // article içindeki div içindeki h2'lerden indisi tek olanların rengini mavi yap
+    $("article > div > h2:even").css("color", "orange"); // article içindeki div içindeki h2'lerden indisi çift olanların rengini turuncu yap
+    $("h1").css("color", "red"); // h1 başlığının rengini kırmızı yap
+});
+
+// görev 6
+$("#gorev6").click(function() // id'si gorev6 olan etikete tıklandığında fonksiyonu çalıştır
+{
+    $("h1").next().first("div").fadeOut(2000); // h1 etiketinden sonraki ilk div etiketini 2 saniyede sönerek yok et
 });
 
 // görev 9
@@ -45,4 +53,10 @@ $(":header").mouseover(function() // başlıkların üzerine fare ile geldiğind
 {
     var metin = $(this).text(); // o anki başlığın metnini metin değişkenine atadım
     $("#gorev9 > input:text").val(metin); // id'si gorev9 olan etiketin tipi text olan inputunun değerinii metin değişkeni yap
-})
+});
+
+// görev 10
+$("#gorev10").click(function()
+{
+
+});

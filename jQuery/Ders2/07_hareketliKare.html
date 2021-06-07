@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hareketli Kare</title>
     <style>
-        #kare
-        {
-            width: 50px;
-            height: 50px;
-            background-color: darkorange;
-            position: absolute;
-            top: 100px;
-            left: 100px;
-        }
+      #kare {
+        width: 50px;
+        height: 50px;
+        background-color: darkorange;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="kare"></div>
 
     <script src="jquery-3.6.0.min.js"></script>
     <script>
-        var hiz = 10;
+        
+        var adim = 10;
 
-        $("body").keydown(function(event) // body elementi içerisine basılan tuş için belirtilen fonksiyonu çalıştır
+        $("body").keydown(function (event) // body etiketinde basılan klavye tuşuna göre fonksiyonu çalıştır
         {
-            var x = $("#kare").offset().left; // id'si kare olan elementin sol pozisyon değeri
-            var y = $("#kare").offset().top; // id'si kare olan elementin üst pozisyon değeri
+            //$("body").append(event.which + " "); // klavye kodlarını ekrana yazdırmak için
 
-            // sol : 37, ust : 38, sağ : 39, alt : 40
-            switch (event.which)
-            {
-                case 37:
-                    x -= hiz;
-                    break;
-                
-                case 38:
-                    y -= hiz;
-                    break;
+            var x = $("#kare").offset().left; // id'si kare olan etiketin sol taraftan o anki pozisyonu x değişkenine ata
+            var y = $("#kare").offset().top; // id'si kare olan etiketin üst taraftan o anki pozisyonu y değişkenine ata
 
-                case 39:
-                    x += hiz;
-                    break;
+            // sol = 37, üst = 38, sağ = 39, alt = 40;
+            switch (
+            event.which //
+            ) {
+            case 37: // o anki tuşun durumu 37 ise
+                x -= adim; // sola doğru 10 birim git
+                break; // bu durumu bitir
 
-                case 40:
-                    y += hiz;
-                    break;
+            case 38: // o anki tuşun durumu 38 ise
+                y -= adim; // üste doğru 10 birim git
+                break; // bu durumu bitir
+
+            case 39: // o anki tuşun durumu 39 ise
+                x += adim; // sağa doğru 10 birim git
+                break; // bu durumu bitir
+
+            case 40: // o anki tuşun durumu 40 ise
+                y += adim; // aşağı doğru 10 birim git
+                break; // bu durumu bitir
             }
-            $("#kare").offset({left: x, top: y });
+
+            $("#kare").offset({ left: x, top: y }); // id'si kare olan etiketin o anki pozisyonunun sol tarafını x üst tarafını y değişkenine göre ayarla
         });
     </script>
-</body>
+  </body>
 </html>
