@@ -45,7 +45,34 @@ $("#gorev5").click(function () // id'si gorev5 olan etikete tıklandığında fo
 // görev 6
 $("#gorev6").click(function() // id'si gorev6 olan etikete tıklandığında fonksiyonu çalıştır
 {
-    $("h1").next().first("div").fadeOut(2000); // h1 etiketinden sonraki ilk div etiketini 2 saniyede sönerek yok et
+    $("article > div").first().fadeOut(2000); // h1 etiketinden sonraki ilk div etiketini 2 saniyede sönerek yok et
+});
+
+//görev 7
+$("#gorev7").click(function() // id'si gorev7 olan elemente tıklandığında fonksiyon çalıştır
+{
+    $(":header:contains('can')").each(function() // başlıklardan can içerenleri tek tek gez belirtilen fonksiyonu çalıştır
+    {
+        var metin = $(this).text(); // o anki ifadenin metnini al metin değişkenine ata
+        $("<li/>").text(metin).appendTo("#gorev7 > ul"); // li elementi oluştur içeriğine metin değişkenini ver id'si gorev7 olan elementin içindeki ul'ye ekle
+    });
+
+});
+
+// görev 8
+$("#gorev8").click(function() // id'si gorev8 olan elemente tıklandığında fonksiyon çalıştır
+{
+    $.ajax({
+        url: "lorem.html", // dosyanın yolunu gösterdik
+        type: "get", // dosyanın okuma tipi
+        success: function(ifade) // başarılı olduğunda parametre olarak dosya2yı içerin fonksiyon çalıştır
+        {
+            var lorem = $("<h2> Lorem </h2>" + "<p>" + ifade + "</p>"); // h2 başlığı oluştur metni Lorem paragraf elementi oluştur içerisi fonksiyonun paramtresinde bulunan değer. lorem değişkenine ata
+
+            $("h1").after(lorem); // h1 elementinden sonraya lorem değişkenini ekle
+        }
+
+    })
 });
 
 // görev 9
@@ -56,7 +83,15 @@ $(":header").mouseover(function() // başlıkların üzerine fare ile geldiğind
 });
 
 // görev 10
-$("#gorev10").click(function()
+$("#gorev10").click(function() // id'si gorev10 olan elemente tıklandığında belirtilen fonksiyonu çalıştır
 {
+    var resim = $("<img src='check.png' />"); // html yöntemi ile resim ekledik resim değişkenine atadık
 
+    $(resim).css("width", "100px") // resim değişkeninin genişliğini ayarladık
+    .css("height", "100") // yükseklik 
+    .css("position", "relative") // resmin pozisyonu // relative içerisinde bulunduğu elemente göre konumlandırılır
+    .css("left", "760px") // sol kenardan uzaklığı
+    .css("bottom", "150px"); // alt kenardan uzaklığı
+
+    $(".sutun:eq(1)").append(resim); // class'ı sutun indis'i 1 olan elementin içinin sonuna ekle
 });
