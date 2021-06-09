@@ -93,5 +93,5 @@ $("#gorev10").click(function() // id'si gorev10 olan elemente tıklandığında 
     .css("left", "760px") // sol kenardan uzaklığı
     .css("bottom", "150px"); // alt kenardan uzaklığı
 
-    $(".sutun:eq(1)").append(resim); // class'ı sutun indis'i 1 olan elementin içinin sonuna ekle
+    $(".sutun:eq(1)").append(resim); // class'ı sutun olan 2. elementin içinin sonuna ekle
 });
