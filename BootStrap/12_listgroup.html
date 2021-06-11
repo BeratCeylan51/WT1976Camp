@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste Grupları</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>List Group</h1>
+
+        <h2>Basit Örnek</h2>
+
+        <ul class="list-group">
+            <li class="list-group-item">Lorem.</li>
+            <li class="list-group-item">Nesciunt.</li>
+
+            <!-- d-flex : esnek bir yapı için kullanılır -->
+            <!-- justify-content-between : yatay hizlama ayarı arasındaki boşluğu ayarla diyoruz -->
+            <!-- align-items-center : dikey olarak ortala -->
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Niğde.
+                <!-- pill : hap demek içeriğin başına hap şeklinde bir bildirim kutusu koyar -->
+                <span class="badge badge-danger badge-pill">51</span>
+            </li>
+            <li class="list-group-item active">Tempora.</li>
+            <li class="list-group-item">Ab.</li>
+            <li class="list-group-item disabled">Aspernatur.</li>
+        </ul>
+
+        <h2 class="mt-3">İşlediklerimizin Bazıları</h2>
+        <div class="list-group">
+
+            <a class="list-group-item list-group-item-action" href="05_typography.html">Typography</a>
+            <a class="list-group-item list-group-item-action" href="06_images.html">Images</a>
+            <a class="list-group-item list-group-item-action" href="10_cards.html">Cards</a>
+            <a class="list-group-item list-group-item-action" href="11_carousel.html">Carousel</a>
+        </div>
+        
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
