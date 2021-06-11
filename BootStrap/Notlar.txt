@@ -10,3 +10,7 @@ container : sayfada yazının daha düzenli görülmesini sağlar. sağdan ve so
 
 bootstap kullanırken class isimlerinin otomatik tamamlanmasını aktif hale getirmek için 
 HTML CSS Support eklentisini kullandık
+
+straw pool : anket sitesi
+
+picsum.photos : istenilen boyutta rastgele fotoğraf veren site
