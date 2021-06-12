@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Fonts, Font Awesome, Toastr</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Buna Dikkat -->
+    <!-- bootsrap.min.css toastr'ın css'ini eziyor. linki bootstrap.min.css'den sonra koy -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body
+        {
+            font-family: 'Zen Dots', cursive;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Fonts, Font Awesome, Toastr</h1>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam eos placeat, nesciunt alias ipsa vitae perspiciatis a officiis necessitatibus expedita. Tempore eum maxime voluptas iure commodi recusandae deserunt! Tempora, adipisci?</p>
+        <p>Illo facere magni architecto tempore tempora nam nostrum officia laborum distinctio, dicta debitis laboriosam adipisci necessitatibus incidunt, dignissimos cupiditate nihil consequatur omnis excepturi! Neque dolor corrupti quis debitis at repellat.</p>
+        <p>Asperiores ab nulla dolores voluptate soluta aliquam beatae quod. Nesciunt debitis voluptate enim beatae voluptates culpa dolor? Dolorum perspiciatis dolorem incidunt exercitationem nostrum fuga, unde, perferendis distinctio, nesciunt aspernatur debitis?</p>
+        <p>Enim vero, soluta explicabo, tempora cumque, consectetur facilis cupiditate recusandae maiores sapiente ipsum velit! Expedita voluptatibus voluptates labore beatae officia sed nihil dolorum, voluptatum adipisci voluptas quis, voluptate culpa assumenda.</p>
+        <p>Exercitationem, officia sit reiciendis alias impedit beatae vero quae labore iusto distinctio voluptas harum incidunt animi dolor, ab necessitatibus veniam error ut quo, illo maiores? Aliquam natus tempora cumque inventore.</p>
+    
+        <button class="btn btn-info">
+            <i class="fas fa-virus"></i>
+            Covid-19 Hakkında Bilgi
+        </button>
+
+        <button class="btn btn-success" id="btnBegen">
+            <i class="fas fa-heart"></i>
+            Beğen
+        </button>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $("#btnBegen").click(function()
+        {
+            toastr.success("Beğeniniz İçin Teşekkürler");
+        });
+    </script>
+</body>
+</html>
