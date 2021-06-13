@@ -6,93 +6,317 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap Ödevi</title>
 
+    <!-- Google fonts Roboto yazı stilini ekledik  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    
     <!-- font-awesome linki -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
     <link rel="stylesheet" href="libs/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    
+    <!-- Google fonts için gerekli css kodu css dosyası içinde onu sayfaya dahil ettik -->
+    <link rel="stylesheet" href="css/bootstrapOdev.css">
 
 </head>
 <body>
 
-    <div class="container"> <!-- container class'ı div etiketini sayfada ortalar-->
+    <header> <!-- Sayfa başlığı kısmında olacaklar bu alanda yazılacak-->
 
-        <!-- navbar           : bu etiketin navigasyon classının tanımlandığını belirtir -->
-        <!-- navbar-expand-lg : Navigasyonu lg ve üstü cihazlarda genişletmesini söyler -->
-        <!-- navbar-dark      : Tahminimce navigasyonun biçimlendirmesini belirtilen moda (dark mod) göre yapar -->
-        <!-- bg-dark          : Arkaplan rengi  -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container"> <!-- container class'ı div etiketini sayfada ortalar-->
+    
+            <!-- navbar           : bu etiketin navigasyon classının tanımlandığını belirtir -->
+            <!-- navbar-expand-lg : Navigasyonu lg ve üstü cihazlarda genişletmesini söyler -->
+            <!-- navbar-dark      : Tahminimce navigasyonun biçimlendirmesini belirtilen moda (dark mod) göre yapar -->
+            <!-- bg-dark          : Arkaplan rengi  -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
+                <!-- navbar-brand : logo vs isimlendirmesi -->
+                <a class="navbar-brand" href="#">Ödev</a>
+    
+                <!-- navbar-toggler : sınıfının gezinme çubuğu olduğunu söyler -->
+                <!-- data-toggle    : veri geçişinin nasıl olacağını belirtiriz. collapse : çöküş demek -->
+                <!-- data-target    : hangi hedeftekileri çökerteceğini söyleriz -->
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarIcerik">
+    
+                    <!-- navbar-toggler-icon : navigasyon çubuğuna default olarak belirtilmiş iconu ekler -->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- collapse navbar-collapse : çöküş sınıfında navigasyon çöküşü olacağını belirtir -->
+                <div class="collapse navbar-collapse" id="navbarIcerik">
+    
+                    <!-- navbar-nav : gezinme çubuğunda gezilecek yerler -->
+                    <!-- mr-auto    : sağdan margin verebildiği kadar verir. yani yanına gelen ögeleri itebildiği kadar iter flex yapıda olması lazım-->
+                    <ul class="navbar-nav mr-auto">
+    
+                        <!-- nav-item : gezilecek ögeler-->
+                        <li class="nav-item">
+    
+                            <!-- nav-link : gezilecek link  -->
+                            <a href="#" class="nav-link active">Anasayfa</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Hakkında</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">İletişim</a>
+                        </li>
+    
+                    </ul>
+    
+                    <!-- navbar-nav : gezinme çubuğunda gezilecek yerler -->
+                    <ul class="navbar-nav">
+    
+                        <!-- nav-item : gezilecek ögeler-->
+                        <li class="nav-item">
+    
+                            <!-- nav-link : gezilecek link  -->
+                            <a href="#" class="nav-link">Kayıt Ol</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Giriş</a>
+                        </li>
+    
+                    </ul>
+    
+                    <!-- form-inline : form içerikleri -->
+                    <form class="form-inline">
+    
+                        <!-- input-group : form elemanlarını gruplandırır -->
+                        <div class="input-group">
+                            <input type="search" class="form-control ml-0 ml-lg-2" placeholder="Ara..">
+    
+                            <!-- input-group-append : form elemanlarını gruplandır ve sonraya ekle  -->
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div> <!-- input-group-append BİTİŞ-->
+    
+                        </div> <!-- input-group BİTİŞ-->
+    
+                    </form> <!-- Form Bitiş -->
+    
+                </div> <!-- Çöküş olacak bölüm Bitiş -->
 
-            <!-- navbar-brand : logo vs isimlendirmesi -->
-            <a class="navbar-brand" href="#">Ödev</a>
+            </nav> <!-- Navigasyon çubuğu Bitiş -->
+            
+        </div> <!-- Container Bitiş-->
 
-            <!-- navbar-toggler : sınıfının gezinme çubuğu olduğunu söyler -->
-            <!-- data-toggle    : veri geçişinin nasıl olacağını belirtiriz. collapse : çöküş demek -->
-            <!-- data-target    : hangi hedeftekileri çökerteceğini söyleriz -->
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarIcerik">
+    </header> <!-- Sayfa içeriği başlangıç Bitiş --> 
 
-                <!-- navbar-toggler-icon : navigasyon çubuğuna default olarak belirtilmiş iconu ekler -->
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <main> <!-- Sayfamızın içeriği bu alanda bulunacak-->
 
-            <!-- collapse navbar-collapse : çöküş sınıfında navigasyon çöküşü olacağını belirtir -->
-            <div class="collapse navbar-collapse" id="navbarIcerik">
+        <!-- container : Sayfayı ortalar -->
+        <!-- mt-3      : margin top 3 birim -->
+        <div class="container mt-3">
 
-                <!-- navbar-nav : gezinme çubuğunda gezilecek yerler -->
-                <!-- mr-auto    : sağdan margin verebildiği kadar verir. yani yanına gelen ögeleri itebildiği kadar iter -->
-                <ul class="navbar-nav mr-auto">
+            <!-- row : satır oluşturur -->
+            <div class="row">
 
-                    <!-- nav-item : gezilecek ögeler-->
-                    <li class="nav-item">
+                <!-- sol sütun BAŞLANGIÇ -->
+                <!-- col-lg-8 : large cihazlarda 12 dilimde 8'lik sütun -->
+                <div class="col-lg-8">
 
-                        <!-- nav-link : gezilecek link  -->
-                        <a href="#" class="nav-link active">Anasayfa</a>
-                    </li>
+                    <div class="card" id="ilkSutun">
+                        <div class="card-body py-5">
+                            <h1>
+                                Web Kampı - Bootstrap 4
+                            </h1>
+                            <span>Bootstrap ile şık, modern ve güzel arayüzler geliştiriyorum</span>
+                        </div>
+                    </div> <!-- Kart Bitiş -->
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Hakkında</a>
-                    </li>
+                    <!-- carousel  : atlıkarınca sistemin uygulanacağını belirttik -->
+                    <!-- slide     : kayarak geçiş. farklı geçişlerde kullanılabilir carousel-fade gibi -->
+                    <!-- mt-4      : margin top yukarıdan dış boşluk -->
+                    <!-- data-ride : sayfa yüklendiğinde başlamasını söyler -->
+                    <div id="resimler" class="carousel slide mt-4" data-ride="carousel">
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">İletişim</a>
-                    </li>
+                        <ol class="carousel-indicators">
 
-                </ul>
+                            <li data-target="#resimler" data-slide-to="0" class="active"></li>
+                            <li data-target="#resimler" data-slide-to="1"></li>
+                            <li data-target="#resimler" data-slide-to="2"></li>
+                        </ol>
 
-                <!-- navbar-nav : gezinme çubuğunda gezilecek yerler -->
-                <ul class="navbar-nav">
+                        <div class="carousel-inner"> <!-- carousel-inner : carousel yapısını kullanıldığı etiket içerisinde uygulayacağını belirtir -->
 
-                    <!-- nav-item : gezilecek ögeler-->
-                    <li class="nav-item">
+                            <div class="carousel-item active"> <!-- carousel-item : carousel ögesidir. bu class'ın kullanıldığı etiketteki resimlere slide uygulanır -->
+                                <img src="img/bootstrap1.png" alt="bootstrap" class="w-100">
 
-                        <!-- nav-link : gezilecek link  -->
-                        <a href="#" class="nav-link">Kayıt Ol</a>
-                    </li>
+                                <!-- carousel-caption : resim içeriğine yazı ekler -->
+                                <div class="carousel-caption">
+                                    <h5>Bootstrap 4</h5>
+                                    <p>Yaparak öğreniyorum..</p>
+                                </div>
+                            </div>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Giriş</a>
-                    </li>
+                            <div class="carousel-item">
+                                <img src="https://picsum.photos/id/500/800/300" alt="photo" class="w-100">
+                            </div>
 
-                </ul>
+                            <div class="carousel-item">
+                                <img src="https://picsum.photos/id/270/800/300" alt="photo" class="w-100">
+                            </div>
+                        </div>
 
-                <!-- form-inline : form içerikleri -->
-                <form class="form-inline">
+                        <!-- href' hangi içeriğe uygulanacağını belirttik id'si resimler olan etikete -->
+                        <!-- carousel-control-prev : karoselin öncekini kontrol etmesini sağlar -->
+                        <!-- data-slide="prev"     : resimlerden önceki olanı belirtir. next ver dene -->
+                        <a href="#resimler" class="carousel-control-prev" data-slide="prev">
+                            
+                            <!-- carousel-control-prev-icon : önceki ikonu verir. prev yerine next yazarak dene -->
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
 
-                    <div class="input-group">
-                        <input type="search" class="form-control ml-0 ml-lg-2" placeholder="Ara..">
+                        <!-- href' hangi içeriğe uygulanacağını belirttik id'si resimler olan etikete -->
+                        <!-- carousel-control-next : karoselin sonrakini kontrol etmesini sağlar -->
+                        <!-- data-slide="next"     : resimlerden sonraki olanı belirtir. prev ver dene -->
+                        <a href="#resimler" class="carousel-control-next" data-slide="next">
 
-                        <div class="input-group-append">
-                            <button class="btn btn-secondary" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
+                            <!-- carousel-control-prev-icon : sonraki ikonu verir. next yerine prev yazarak dene -->
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+
+                    </div>
+
+                </div> <!-- sol sütun Bitişi -->
+
+                <!-- Sağ sütun BAŞLANGIÇ -->
+                <!-- col-lg-4 : large cihazlarda 12 dilimde 4'lük sütun -->
+                <div class="col-lg-4">
+
+                    <!-- card : bu class'ın bulunduğu etikete kart kodları uygulanır -->
+                    <div class="card mt-lg-0 mt-3">
+        
+                        <!-- card-header : oluşturulan kartın başlık içerikleri bulunur. -->
+                        <!-- d-flex      : sayfanın daha esnek yapıda olmasını sağlar -->
+                        <h5 class="card-header d-flex">
+
+                            <!-- mr-auto : bir sonraki içeriği itebildiği kadar iter. sayfa yapısı flex olmak zorundadır -->
+                            <span class="mr-auto">Üye Girişi </span> 
+                            <i class="fas fa-sign-in-alt mt-1"></i>
+                        </h5> <!-- kart başlığı Bitiş-->
+
+                        <!-- card-body : bu class'ın bulunduğu etikete kart içeriği kodları uygulanır -->
+                        <div class="card-body">
+
+                            <form> <!-- form Başlangıç -->
+
+                                <div class="form-group"> <!-- Form elemanlarını gruplama -->
+
+                                    <label for="email">E-mail</label> <!-- labelin for'u ile input id'si aynı olmalı yazıya tıklandığında input'u focus'lar -->
+                                    <input type="email" class="form-control" id="email" required>
+                                </div> <!-- E-mail grubu Bitiş -->
+
+                                <div class="form-group">
+                                    <label for="parola">Parola</label>
+                                    <input type="password" class="form-control" id="parola" required>
+                                </div> <!-- Parola grubu Bitiş -->
+
+                                <!-- form-check : form kontrolü -->
+                                <div class="form-group form-check">
+
+                                    <input type="checkbox" id="hatirla" class="form-check-input">
+                                    <label for="hatirla" class="form-check-label">Beni Hatırla</label>
+                                </div> <!-- Beni Hatırla grubu Bitiş -->
+
+                                <button class="btn btn-primary btn-block">Giriş Yap</button>
+                            </form>
+                        </div>
+
+                    </div> <!-- ÜYE GİRİŞİ Kart Bitişi -->
+
+                    <div class="card mt-3"> <!-- card : kart özellikleri uygulanır. mt-3 : üsten dış boşluk-->
+
+                        <!-- card-header : kart başlığı özellikleri uygulanır -->
+                        <!-- d-flex      : sayfaya esnek yapı kazandırır -->
+                        <h5 class="card-header d-flex"> 
+
+                            <!-- mr-auto : kendisinden sonra gelen içeriği itebildiği kadar iter. sayfa yapısı d-flex olmak zorunda -->
+                            <span class="mr-auto">Menü</span> 
+                            <i class="fas fa-bars mt-1"></i> <!-- Bars işareti -->
+                        </h5>
+
+                        <!-- list-group : liste grubu -->
+                        <ul class="list-group"> 
+
+                            <!-- list-group-item : liste grubu elemanları -->
+                            <li class="list-group-item">
+                                <i class="fas fa-home mr-1"></i> <!-- home işareti -->
+                                Anasayfa
+                            </li>
+
+                            <li class="list-group-item">
+                                <i class="fas fa-code mr-1"></i> <!-- code işareti -->
+                                Örnekler
+                            </li>
+
+                            <li class="list-group-item">
+                                <i class="fas fa-cubes mr-1"></i> <!-- cube işareti -->
+                                Bileşenler
+                            </li>
+
+                            <!-- list-group-item         : lista grubu elemanları -->
+                            <!-- d-flex                  : sayfanın daha esnek olmasını sağlar -->
+                            <!-- justify-content-between : yatay hizadaki ara boşluğu ayarlar -->
+                            <!-- align-items-center      : dikey olarak ortala -->
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                                <!-- list-group-flush : liste gruplarını aynı hizada tutar -->
+                                <span class="list-group-flush">
+                                    <i class="fas fa-paint-roller mr-1"></i> <!-- paint işareti -->
+                                    Temalar
+                                </span>
+
+                                <!-- badge        : rozet eklemek için sınıfları yardımcı sınıflarla birleştirir -->
+                                <!-- badge-danger : rozetin arkaplan rengi -->
+                                <!-- badge-pill   : rozet hap şeklinde olacak -->
+                                <span class="badge badge-danger badge-pill">Yeni!</span>
+                            </li> <!-- Temalar listesi BİTİŞ -->
+
+                        </ul> <!-- Listeleme BİTİŞ -->
+
+                    </div> <!-- Menü Kartı BİTİŞ -->
+
+                    <!-- Öne Çıkan Temalar BAŞLANGIÇ -->
+                    <div class="card mt-3">
+
+                        <!-- card-header : kartın başlığı -->
+                        <!-- d-flex      : sayfaya esneklik kazandırır -->
+                        <h5 class="card-header d-flex">
+
+                            <!-- mr-auto : sonraki içeriği itebildiği kadar iter. sayfa esnek(flex) yapıda olmak zorundadır -->
+                            <span class="mr-auto">Öne Çıkan Temalar</span>
+                            <i class="fas fa-paint-brush"></i> <!-- paint-brush işareti-->
+                        </h5>
+
+                        <div class="row m-3">
+                            <div class="col-6 shadow">
+                                <img src="https://themes.getbootstrap.com/wp-content/uploads/2018/05/front-preview-screenshot1-540x405.jpg" alt="tema" class="w-100">
+                            </div>
+
+                            <div class="col-6 shadow">
+                                <img src="https://themes.getbootstrap.com/wp-content/uploads/2019/10/screenshot-3.jpg" alt="tema" class="w-100">
+                            </div>
                         </div>
                     </div>
-                </form>
 
-            </div>
+                </div> <!-- 4 birimlik sütun Bitiş-->
 
-        </nav>
-        
-    </div> <!-- Container Bitiş-->
+            </div> <!-- Satır Bitiş -->
+
+        </div> <!-- container Bitiş -->
+
+    </main> <!-- Ana içerik Bitiş -->
+
+    <footer></footer>
 
     <script src="libs/jQuery/jquery-3.6.0.min.js"></script>
 
