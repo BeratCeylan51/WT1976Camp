@@ -5,6 +5,10 @@ body
 
 #ilkSutun
 {
-    background-color: rgb(237, 239, 241);
-    height: 240px;
+    background-color: #e9ecef;
+}
+
+#altKisim
+{
+    background-color: #f8f9fa;
 }
